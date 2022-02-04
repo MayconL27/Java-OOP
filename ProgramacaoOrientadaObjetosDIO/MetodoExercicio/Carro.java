@@ -5,7 +5,7 @@ public class Carro {
         // Atributos.
         String cor;
         String modelo;
-        int capacidadeTanque;
+        double capacidadeTanque;
 
         // Construtor.
         Carro() {
@@ -31,7 +31,7 @@ public class Carro {
         public void setModelo(String modelo) {
             this.modelo = modelo;
         }
-        public int getCapacidadeTanque() {
+        public double getCapacidadeTanque() {
             return capacidadeTanque;
         }
         public void setCapacidadeTanque(int capacidadeTanque) {
