@@ -1,6 +1,6 @@
 package ProgramacaoOrientadaObjetosDIO.MetodoExercicio;
 
-public class Carro {
+public class Carro extends Veiculo{
        
         // Atributos.
         String cor;
