@@ -31,7 +31,7 @@ public class Bola {
 
     // Construtor:
     public Bola(String cor) {
-        this.cor = cor;
+        this.cor = "Azul";
     }
 
     public void trocaCor(String cor) {
