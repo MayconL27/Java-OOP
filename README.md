@@ -3,12 +3,16 @@
 
 Exer01: 
 Classe Bola: Crie uma classe que modele uma bola:
+
     a. Atributos: Cor, circunferência, material.
+
     b. Métodos: trocaCor e mostraCor
 
 Exer02:
 Classe Quadrado: Crie uma classe que modele um quadrado:
+
     a. Atributos: Tamanho do lado
+    
     b. Métodos: Mudar valor do Lado, Retornar valor do Lado e calcular Área;
 
 Exer03:
