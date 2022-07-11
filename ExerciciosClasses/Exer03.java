@@ -18,7 +18,8 @@ public class Exer03 {
 
         System.out.println("Área: " + r.area());
         System.out.println("Perimetro: " + r.perimentro());
-        
+
+        sc.close();    
     }
     
 }
