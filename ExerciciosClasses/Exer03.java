@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-import model.Quadrado;
 import model.Retangulo;
 
 
