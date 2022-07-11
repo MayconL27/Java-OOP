@@ -1,8 +1,20 @@
-## Exercicios-Metodos-Java
-Exercicios feitos na DIO:
-https://web.dio.me/course/entendendo-metodos-java/learning/1d32857c-8137-4b87-8a1c-474300f71648/?back=/browse
+#ExerciciosClasses
+> https://wiki.python.org.br/ExerciciosClasses
+
+Exer01: 
+Classe Bola: Crie uma classe que modele uma bola:
+a. Atributos: Cor, circunferência, material
+b. Métodos: trocaCor e mostraCor
+
+Exer02:
+Classe Quadrado: Crie uma classe que modele um quadrado:
+a. Atributos: Tamanho do lado
+b. Métodos: Mudar valor do Lado, Retornar valor do Lado e calcular Área;
+
+Exer03:
+Classe Retangulo: Crie uma classe que modele um retangulo:
+a. Atributos: LadoA, LadoB (ou Comprimento e Largura, ou Base e Altura, a escolher)
+b. Métodos: Mudar valor dos lados, Retornar valor dos lados, calcular Área e calcular Perímetro;
+c. Crie um programa que utilize esta classe. Ele deve pedir ao usuário que informe as medidades de um local. Depois, deve criar um objeto com as medidas e calcular a quantidade de pisos e de rodapés necessárias para o local.
 
 
-## ProgramacaoOrientadaObjetosDIO
- Exercicios feitos na DIO:
- https://web.dio.me/course/programacao-orientada-a-objetos/learning/8d92b14b-79be-4816-9f10-c4a9841f57d2?back=/track/gft-start-4-java
