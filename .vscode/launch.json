@@ -1,0 +1,49 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exer01",
+            "request": "launch",
+            "mainClass": "Exer01",
+            "projectName": "Java-OOP-Exercicios_cec154e9"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exer02",
+            "request": "launch",
+            "mainClass": "Exer02",
+            "projectName": "Java-OOP-Exercicios_cec154e9"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exer03",
+            "request": "launch",
+            "mainClass": "Exer03",
+            "projectName": "Java-OOP-Exercicios_cec154e9"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exer04",
+            "request": "launch",
+            "mainClass": "Exer04",
+            "projectName": "Java-OOP-Exercicios_cec154e9"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exer05",
+            "request": "launch",
+            "mainClass": "Exer05",
+            "projectName": "Java-OOP-Exercicios_cec154e9"
+        }
+    ]
+}
