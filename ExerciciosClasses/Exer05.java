@@ -26,7 +26,7 @@ public class Exer05 {
             switch (opcao) {
                 case 1:
 
-                System.out.println("Digite sue número da conta:");
+                System.out.println("Digite seu número da conta:");
                 numConta = sc.nextInt();
                 sc.nextLine();
                 System.out.println("Digite o nome:");
@@ -38,12 +38,11 @@ public class Exer05 {
                 ccl.setSaldo(saldo);
                 cc.add(ccl);
                 
-                int nConta = cc.get(0).getNumConta();
-                String nome1 = cc.get(0).getNome();
-
-                System.out.println("Nome: " + nome1 + " Idade: " + nConta + " Saldo: " + saldo);
-
-                    
+                for (int i = 0; i < cc.size(); i++) {
+                    numConta = cc.get(i).getNumConta();
+                    nome = cc.get(i).getNome();
+                    System.out.println("Nome: " + nome + " | Número da conta: " + numConta + " | Saldo: R$ " + saldo);   
+                }
                 
                     break;
                 case 2:
@@ -51,6 +50,8 @@ public class Exer05 {
                     break;
                 case 3:
                 System.out.println("Depósito");
+                    System.out.println("Digite a quantia do deposito:");
+                    
                     break;
                 case 4:
                 System.out.println("Saque");

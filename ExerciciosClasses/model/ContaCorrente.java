@@ -4,7 +4,6 @@ public class ContaCorrente {
     private int numConta;
     private String nome;
     private float saldo;
-
     
     public ContaCorrente(int numConta, String nome, float saldo) {
         this.numConta = numConta;
@@ -40,8 +39,9 @@ public class ContaCorrente {
         return 0;
     }
 
-    
-
-    
+    // deposito:
+    public void deposito(float valor) {
+        this.saldo += valor;
+    }
     
 }
