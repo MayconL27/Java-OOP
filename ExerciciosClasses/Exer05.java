@@ -47,6 +47,18 @@ public class Exer05 {
                     break;
                 case 2:
                 System.out.println("Alterar nome");
+
+                    System.out.println("Digite o Nome que deseja alterar:");
+                    String mudarNome = sc.nextLine();
+                    System.out.println("Digite o novo nome:");
+                    String novo = sc.nextLine();
+                    for (int i = 0; i < cc.size(); i++) {
+                        if (cc.get(i).getNome().equals(mudarNome)) {
+                            cc.get(i).setNome(novo);
+                        }
+                    }
+
+
                     break;
                 case 3:
                 System.out.println("Depósito");
