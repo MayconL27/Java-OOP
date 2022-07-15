@@ -8,7 +8,7 @@ public class Exer05 {
 
         int numConta;
         String nome;
-        float saldo;
+        float saldo = 0.0f;
         boolean rodando = true;
 
         Scanner sc = new Scanner(System.in);
@@ -19,6 +19,7 @@ public class Exer05 {
             System.out.println("2- Alterar Nome da conta");
             System.out.println("3- Depósito");
             System.out.println("4- Saque");
+            System.out.println("5- Exibir");
             System.out.println("0- Sair");
             int opcao = sc.nextInt();
             sc.nextLine();
@@ -32,17 +33,12 @@ public class Exer05 {
                 System.out.println("Digite o nome:");
                 nome = sc.nextLine();
         
-                ContaCorrente ccl = new ContaCorrente(opcao, nome, saldo = 0.0f);
+                ContaCorrente ccl = new ContaCorrente(opcao, nome, saldo);
                 ccl.setNumConta(numConta);
                 ccl.setNome(nome);
                 ccl.setSaldo(saldo);
                 cc.add(ccl);
                 
-                for (int i = 0; i < cc.size(); i++) {
-                    numConta = cc.get(i).getNumConta();
-                    nome = cc.get(i).getNome();
-                    System.out.println("Nome: " + nome + " | Número da conta: " + numConta + " | Saldo: R$ " + saldo);   
-                }
                 
                     break;
                 case 2:
@@ -58,7 +54,6 @@ public class Exer05 {
                         }
                     }
 
-
                     break;
                 case 3:
                 System.out.println("Depósito");
@@ -67,6 +62,14 @@ public class Exer05 {
                     break;
                 case 4:
                 System.out.println("Saque");
+                    break;
+                case 5:
+                    for (int i = 0; i < cc.size(); i++) {
+                        numConta = cc.get(i).getNumConta();
+                        nome = cc.get(i).getNome();
+                        System.out.println("Nome: " + nome + " | Número da conta: " + numConta + " | Saldo: R$ " + saldo);   
+                    }
+
                     break;
                 case 0:
                 rodando = false;

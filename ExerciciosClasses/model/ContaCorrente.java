@@ -1,9 +1,13 @@
 package model;
 
+import java.util.ArrayList;
+
 public class ContaCorrente {
     private int numConta;
     private String nome;
     private float saldo;
+
+    ArrayList<ContaCorrente> cc = new ArrayList<ContaCorrente>();
     
     public ContaCorrente(int numConta, String nome, float saldo) {
         this.numConta = numConta;
@@ -38,6 +42,7 @@ public class ContaCorrente {
     public static int size() {
         return 0;
     }
+
 
     // deposito:
     public void deposito(float valor) {
