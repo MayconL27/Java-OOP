@@ -15,6 +15,7 @@ public class Exer05 {
 
     public static void telaInicial() {
         
+        System.out.println("\n********* Menu principal *********");
         System.out.println("1- Cadastrar Conta:");
         System.out.println("2- Alterar Nome da conta");
         System.out.println("3- Depósito");
@@ -29,7 +30,7 @@ public class Exer05 {
                 criarConta();
                 break;
             case 2:
-                
+                mudarNome();
                 break;
             case 3:
                 depositar();
@@ -41,16 +42,16 @@ public class Exer05 {
                 exibir();
                 break;
             case 0:
-                System.out.println("Encerrado!");
+                System.out.println("********* Encerrado! *********");
                 System.exit(0);
             default:
-                System.out.println("Opção inválida!");
+                System.out.println("********* Opção inválida! *********");
                 telaInicial();
                 break;
         }        
-        sc.close();
     }
 
+    // Cadastrar conta;
     public static void criarConta() {
         sc.nextLine();
         System.out.println("\nNome: ");
@@ -76,6 +77,22 @@ public class Exer05 {
         return conta;
     }
 
+    // Alterar nome da conta;
+    public static void mudarNome() {
+        sc.nextLine();
+        System.out.println("Digite o Nome que deseja alterar:");
+        String mudarNome = sc.nextLine();
+        System.out.println("Digite o novo nome:");
+        String novo = sc.nextLine();
+        for (int i = 0; i < contas.size(); i++) {
+            if (contas.get(i).getNome().equals(mudarNome)) {
+                contas.get(i).setNome(novo);
+              } 
+        }
+        telaInicial();
+    }
+
+    // depositar;
     public static void depositar() {
         System.out.println("Número da conta: ");
         int numeroConta = sc.nextInt();
@@ -93,6 +110,7 @@ public class Exer05 {
         telaInicial();  
     }
 
+    // sacar;
     public static void sacar() {
         System.out.println("Número da conta: ");
         int numeroConta = sc.nextInt();
@@ -109,6 +127,7 @@ public class Exer05 {
         telaInicial();  
     }
 
+    // exibir todos os cadastros;
     public static void exibir() {
         if (contas.size() > 0) {
             for(Conta conta: contas) {
@@ -119,6 +138,4 @@ public class Exer05 {
         }
         telaInicial();
     }
-
-
 }

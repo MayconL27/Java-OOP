@@ -57,9 +57,9 @@ public class Conta {
     public void depositar(Double valorDeposito) {
         if(valorDeposito > 0) {
             setSaldo(getSaldo() + valorDeposito);
-            System.out.println("Seu depósito foi realizado!");
+            System.out.println("********* Seu depósito foi realizado! *********");
         } else {
-            System.out.println("Valor negado");
+            System.out.println("********* Valor negado *********");
         }
     }
 
@@ -67,22 +67,11 @@ public class Conta {
     public void sacar(Double valorSaque) {
         if(valorSaque > 0 && this.getSaldo() >= valorSaque) {
             setSaldo(getSaldo() - valorSaque);
-            System.out.println("Saque realizado!");
+            System.out.println("********* Saque realizado! *********");
         } else {
-            System.out.println("Saque não realizado");
+            System.out.println("********* Saque não realizado *********");
         }      
     }
-
-    public void transferir(Conta contaParaDeposito, Double valorTransferir) {
-        if (valorTransferir > 0 && this.getSaldo() >= valorTransferir) {
-            setSaldo(getSaldo() - valorTransferir);
-
-            contaParaDeposito.saldo = contaParaDeposito.getSaldo() + valorTransferir;
-            System.out.println("Transferencia realizada");
-        } else {
-            System.out.println("Transferencia não realizada");
-        }
-    }
-
     
 }
+
