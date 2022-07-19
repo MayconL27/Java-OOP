@@ -1,88 +1,124 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import model.ContaCorrente;
+import model.Conta;
 
 public class Exer05 {
+    static Scanner sc = new Scanner(System.in);
+    static ArrayList<Conta> contas;
     public static void main(String[] args) {
 
-        int numConta;
-        String nome;
-        float saldo = 0.0f;
-        boolean rodando = true;
+        contas = new ArrayList<Conta>();
+        telaInicial();
+    
+    } 
 
-        Scanner sc = new Scanner(System.in);
-        ArrayList<ContaCorrente> cc = new ArrayList<ContaCorrente>();
-
-        while (rodando) {
-            System.out.println("1- Cadastrar Conta:");
-            System.out.println("2- Alterar Nome da conta");
-            System.out.println("3- Depósito");
-            System.out.println("4- Saque");
-            System.out.println("5- Exibir");
-            System.out.println("0- Sair");
-            int opcao = sc.nextInt();
-            sc.nextLine();
-
-            switch (opcao) {
-                case 1:
-
-                System.out.println("Digite seu número da conta:");
-                numConta = sc.nextInt();
-                sc.nextLine();
-                System.out.println("Digite o nome:");
-                nome = sc.nextLine();
+    public static void telaInicial() {
         
-                ContaCorrente ccl = new ContaCorrente(opcao, nome, saldo);
-                ccl.setNumConta(numConta);
-                ccl.setNome(nome);
-                ccl.setSaldo(saldo);
-                cc.add(ccl);
+        System.out.println("1- Cadastrar Conta:");
+        System.out.println("2- Alterar Nome da conta");
+        System.out.println("3- Depósito");
+        System.out.println("4- Saque");
+        System.out.println("5- Exibir");
+        System.out.println("0- Sair");
+
+        int opcao = sc.nextInt();
+
+        switch (opcao) {
+            case 1:
+                criarConta();
+                break;
+            case 2:
                 
-                
-                    break;
-                case 2:
-                System.out.println("Alterar nome");
-
-                    System.out.println("Digite o Nome que deseja alterar:");
-                    String mudarNome = sc.nextLine();
-                    System.out.println("Digite o novo nome:");
-                    String novo = sc.nextLine();
-                    for (int i = 0; i < cc.size(); i++) {
-                        if (cc.get(i).getNome().equals(mudarNome)) {
-                            cc.get(i).setNome(novo);
-                        }
-                    }
-
-                    break;
-                case 3:
-                System.out.println("Depósito");
-                    System.out.println("Digite a quantia do deposito:");
-                    
-                    break;
-                case 4:
-                System.out.println("Saque");
-                    break;
-                case 5:
-                    for (int i = 0; i < cc.size(); i++) {
-                        numConta = cc.get(i).getNumConta();
-                        nome = cc.get(i).getNome();
-                        System.out.println("Nome: " + nome + " | Número da conta: " + numConta + " | Saldo: R$ " + saldo);   
-                    }
-
-                    break;
-                case 0:
-                rodando = false;
-                System.out.println("Saindo...");
-                    break;
-            
-                default:
-                    break;
-            }
-            
-        }
-        
+                break;
+            case 3:
+                depositar();
+                break;
+            case 4:
+                sacar();
+                break;
+            case 5:
+                exibir();
+                break;
+            case 0:
+                System.out.println("Encerrado!");
+                System.exit(0);
+            default:
+                System.out.println("Opção inválida!");
+                telaInicial();
+                break;
+        }        
         sc.close();
     }
-    
+
+    public static void criarConta() {
+        sc.nextLine();
+        System.out.println("\nNome: ");
+        String nome = sc.nextLine();
+        
+
+        Conta conta = new Conta(0, nome);
+        contas.add(conta);
+        System.out.println("Conta criada");
+
+        telaInicial();
+    }
+
+    private static Conta encontrarConta(int numeroConta) {
+        Conta conta = null;
+        if (contas.size() > 0) {
+            for(Conta c: contas) {
+                if (c.getNumConta() == numeroConta) {
+                    conta = c;
+                }                   
+            }     
+        }
+        return conta;
+    }
+
+    public static void depositar() {
+        System.out.println("Número da conta: ");
+        int numeroConta = sc.nextInt();
+
+        Conta conta = encontrarConta(numeroConta);
+
+        if (conta != null) {
+            System.out.println("Valor para depositar:");
+            Double valorDeposito = sc.nextDouble();
+            conta.depositar(valorDeposito);
+            System.out.println("Valor depositado!");
+        } else {
+            System.out.println("conta não encontrada");
+        }
+        telaInicial();  
+    }
+
+    public static void sacar() {
+        System.out.println("Número da conta: ");
+        int numeroConta = sc.nextInt();
+
+        Conta conta = encontrarConta(numeroConta);
+
+        if (conta != null) {
+            System.out.println("Valor para sacar:");
+            Double valorSaque = sc.nextDouble();
+            conta.sacar(valorSaque);
+        } else {
+            System.out.println("conta não encontrada");
+        }
+        telaInicial();  
+    }
+
+    public static void exibir() {
+        if (contas.size() > 0) {
+            for(Conta conta: contas) {
+                System.out.println(conta);
+            }
+        } else {
+            System.out.println("Não há contas cadastradas");
+        }
+        telaInicial();
+    }
+
+
 }
