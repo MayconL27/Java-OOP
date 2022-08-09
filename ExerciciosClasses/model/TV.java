@@ -1,6 +1,6 @@
 package model;
 
-public class TV {
+public class TV{
     private int canal;
     private int volume;
 
@@ -22,5 +22,7 @@ public class TV {
         this.volume = volume;
     }
 
-    
+    public String info() {
+        return "Canal: " + canal + " Volume: " + volume;
+    } 
 }

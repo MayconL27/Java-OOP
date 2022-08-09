@@ -18,6 +18,7 @@ public class Exer06 {
 
     public static void ControleRemoto() {
 
+        TV tv = new TV(0, 0);
         System.out.println("\n********* CONTROLE REMOTO *********");
         System.out.println("1 - Informar número do canal.");
         System.out.println("2 - aumentar/diminuir o volume.");
@@ -26,11 +27,10 @@ public class Exer06 {
 
         switch (opc) {
             case 1:
-                System.out.println("Informe o número do canal:");
-                
+                mudarCanal();
                 break;
             case 2:
-                System.out.println("Deseja diminuir ou aumentar?");
+                mudarVol();
                 break;
             case 0:
                 System.out.println("********* Encerrado! *********");
@@ -44,17 +44,54 @@ public class Exer06 {
         }    
     }
 
-    // Validando canal;
-    public void validarCanal(int canalValid) {
-        if ((canalValid > 0) && (canalValid <= 100)) {
-            System.out.println("Canal:" + canalValid);
+
+    // Mudar canal
+    public static void mudarCanal() {
+        sc.nextLine();
+        System.out.println("Informe o número do canal:");
+        int canal = sc.nextInt();
+
+        if ((canal > 0) && (canal <= 100)) {
+            System.out.println("Canal:" + canal);
+            ControleRemoto();
         } else {
             System.out.println("Canal não existe");
-        }
+            mudarCanal();
+        }     
     }
-    
-    public void mudarCanal(int mudarCanal) {
-        validarCanal(mudarCanal);
 
+    // Aumentar volume
+    public static void mudarVol() {
+        sc.nextLine();
+        System.out.println("Deseja diminuir ou aumentar? + ou - ");
+        String opcVol = sc.nextLine();
+        if (opcVol.equalsIgnoreCase("+")) {
+            sc.nextLine();
+            System.out.println("Aumentar volume para: ");
+            int volume = sc.nextInt();
+                if ((volume >= 0) && (volume <= 100)) {
+                 System.out.println("Volume:" + volume);
+                 ControleRemoto();
+                 } else {
+                    System.out.println("Volume não suportado!");
+                    mudarVol();
+                 } 
+            
+            } else if (opcVol.equalsIgnoreCase("-")){
+                sc.nextLine();
+                System.out.println("Diminuir volume para: ");
+                int volume = sc.nextInt();
+                if ((volume >= 0) && (volume <= 100)) {
+                    System.out.println("Volume: " + volume);
+                    ControleRemoto();
+                } else {
+                    System.out.println("Volume não suportado!");
+                    mudarVol();
+                }
+                
+        }          
     }
+
+   
+   
 }
