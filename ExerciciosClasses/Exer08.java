@@ -1,3 +1,5 @@
+import model.Macaco;
+
 public class Exer08 {
     public static void main(String[] args) {
         /**
@@ -9,6 +11,25 @@ public class Exer08 {
          * do estomago a cada refeição. Experimente fazer com que um macaco 
          * coma o outro.  É possível criar um macaco canibal?
          */
+        Macaco m1 = new Macaco("M1");
+        Macaco m2 = new Macaco("M2");
+
+        m1.comer("Maçã");
+        m1.verBucho();
         
+        m2.comer("Banana");
+        m2.verBucho();
+
+        m1.digerir();
+        m2.digerir();
+
+        m1.verBucho();
+        m2.verBucho();
+        m1.digerir();
+
+        
+
+
+
     }
 }
