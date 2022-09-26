@@ -1,3 +1,6 @@
+import model.Ponto;
+import model.RetanguloExer09;
+
 public class Exer09 {
     public static void main(String[] args) {
         /** Exer09:
@@ -15,6 +18,12 @@ public class Exer09 {
          *     i. Crie um menu para alterar os valores do retângulo e imprimir o centro deste retângulo. 
          * */
 
-         
+       
+        
+        Ponto p1 = new Ponto(10,20);
+        Ponto p2 = new Ponto(20,50);
+        RetanguloExer09 r = new RetanguloExer09(p1,p2);
+        System.out.println(r.centro());
+
     }
 }

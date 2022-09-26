@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Exer09",
+            "request": "launch",
+            "mainClass": "Exer09",
+            "projectName": "Java-OOP-Exercicios_cec154e9"
+        },
+        {
+            "type": "java",
             "name": "Launch Exer08",
             "request": "launch",
             "mainClass": "Exer08",
